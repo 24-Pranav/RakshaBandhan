@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Raksha Bandhan!</title>
+
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Custom styles for fonts and theme */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFF8F0;
+            /* A warm, festive off-white */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
+        }
+
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .gradient-text {
+            background-image: linear-gradient(to right, #E85D75, #F9A825);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* A subtle pattern for the background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* Animation for elements to fade in */
+        .fade-in {
+            animation: fadeInAnimation 1s ease-in forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Add animation delays for a staggered effect */
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+
+        /* New pulse animation for the main Rakhi image */
+        .pulse-animation {
+            animation: pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        /* Canvas for falling petals animation */
+        #petals-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            /* Make canvas non-interactive */
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- Canvas for the falling petals effect -->
+    <canvas id="petals-canvas"></canvas>
+
+    <div class="container mx-auto px-4 py-8 md:py-16 relative z-10">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="font-dancing text-5xl md:text-7xl font-bold gradient-text fade-in">Happy Raksha Bandhan!</h1>
+            <p class="text-lg md:text-xl text-pink-500 mt-2 fade-in delay-1">To the best sister in the world.</p>
+        </header>
+
+        <!-- Main Content Section -->
+        <main>
+            <!-- Hero Image of a Rakhi -->
+            <div class="flex justify-center mb-12 fade-in delay-2">
+                <img src="rakhi.jpg"
+                    onerror="this.onerror=null;this.src='https://placehold.co/800x400/F8C4B4/4A2E2A?text=Beautiful+Rakhi';"
+                    alt="A decorative Rakhi" class="rounded-lg shadow-xl max-w-lg w-full object-cover pulse-animation">
+            </div>
+
+            <!-- Personal Message Section -->
+            <section class="bg-white/70 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg mb-12 fade-in delay-3">
+                <h2 class="font-dancing text-3xl md:text-4xl gradient-text mb-4">My Dearest Sister,</h2>
+                <!-- 
+                  *****************************************
+                  *** EDIT YOUR PERSONAL MESSAGE HERE ***
+                  *****************************************
+                -->
+                <p class="text-base md:text-lg leading-relaxed text-gray-700">
+                    On this special day of Raksha Bandhan, I'm sending you all my love. Even if we're miles apart, our
+                    bond remains as strong as ever. You're not just my sister, but my first friend, my biggest
+                    supporter, and my partner-in-crime.
+                    <br><br>
+                    Thank you for all the laughter, the advice, and for always being there for me. I promise to always
+                    protect you, stand by you, and annoy you forever! Wishing you a day filled with happiness, joy, and
+                    everything you deserve.
+                </p>
+                <!-- ***************************************** -->
+            </section>
+
+            <!-- Photo Gallery Section -->
+            <section class="mb-12 fade-in delay-4">
+                <h2 class="font-dancing text-4xl md:text-5xl text-center gradient-text mb-8">Our Cherished Moments</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    <div
+                        class="bg-white p-2 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <img src="haldi2.JPG"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x600/FFE0B2/4A2E2A?text=Photo+1';"
+                            alt="Brother and sister photo 1" class="rounded-md w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-white p-2 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <img src="shadi.jpg"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x600/FFCCBC/4A2E2A?text=Photo+2';"
+                            alt="Brother and sister photo 2" class="rounded-md w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-white p-2 rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <img src="haldi.JPG"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x600/F8C4B4/4A2E2A?text=Photo+3';"
+                            alt="Brother and sister photo 3" class="rounded-md w-full h-full object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Poem/Quote Section -->
+            <section class="text-center italic text-gray-600 bg-white/50 p-6 rounded-lg fade-in delay-4">
+                <p class="text-lg">"A thread of love, a bond so true,<br>Happy Rakhi, my dear sister, to you."</p>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 pt-6 border-t border-pink-200 fade-in delay-4">
+            <p class="text-gray-600">Made with lots of love by your brother.</p>
+            <p class="font-dancing text-2xl gradient-text mt-2">Always and Forever</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for Falling Petals Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('petals-canvas');
+            const ctx = canvas.getContext('2d');
+
+            let w = canvas.width = window.innerWidth;
+            let h = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            });
+
+            const petals = [];
+            const petalCount = 30;
+            const petalColors = ['#E85D75', '#F9A825', '#FFFFFF', '#F8C4B4'];
+
+            class Petal {
+                constructor() {
+                    this.x = Math.random() * w;
+                    this.y = (Math.random() * h * 2) - h;
+                    this.w = 25 + Math.random() * 15;
+                    this.h = 20 + Math.random() * 10;
+                    this.opacity = this.w / 40;
+                    this.flip = Math.random();
+                    this.xSpeed = 1.5 + Math.random() * 2;
+                    this.ySpeed = 1 + Math.random() * 1;
+                    this.flipSpeed = Math.random() * 0.03;
+                    this.color = petalColors[Math.floor(Math.random() * petalColors.length)];
+                }
+
+                draw() {
+                    if (this.y > h || this.x > w) {
+                        this.x = -this.w;
+                        this.y = (Math.random() * h * 2) - h;
+                    }
+                    ctx.globalAlpha = this.opacity;
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y);
+                    ctx.bezierCurveTo(
+                        this.x - this.w / 2, this.y - this.h / 2,
+                        this.x - this.w / 2, this.y + this.h / 2,
+                        this.x, this.y + this.h
+                    );
+                    ctx.bezierCurveTo(
+                        this.x + this.w / 2, this.y + this.h / 2,
+                        this.x + this.w / 2, this.y - this.h / 2,
+                        this.x, this.y
+                    );
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+
+                animate() {
+                    this.x += this.xSpeed;
+                    this.y += this.ySpeed;
+                    this.flip += this.flipSpeed;
+                    this.draw();
+                }
+            }
+
+            for (let i = 0; i < petalCount; i++) {
+                petals.push(new Petal());
+            }
+
+            function animatePetals() {
+                ctx.clearRect(0, 0, w, h);
+                petals.forEach(petal => petal.animate());
+                requestAnimationFrame(animatePetals);
+            }
+
+            animatePetals();
+        });
+    </script>
+</body>
+
+</html>
